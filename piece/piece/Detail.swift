@@ -11,34 +11,38 @@ import SnapKit
 class Detail: UIViewController{
     var word : UILabel!
     var desc : UITextView!
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    var WordTitle : String!
+    var WordDesction : String!
+    init(wordTitle: String!, wordDesction: String!) {
+        super.init(nibName: nil, bundle: nil)
+        WordTitle = wordTitle
+        WordDesction = wordDesction
     }
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder : aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //word
         word = UILabel()
-        word.text = "title"
+        word.text = WordTitle
         view.addSubview(word)
-        word.snp_makeConstraints{ (make) -> Void in
+        word.snp_updateConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(0)
             make.left.equalTo(view).offset(10)
             make.right.equalTo(view).offset(-10)
-            make.height.equalTo(30)
+            make.height.equalTo(50)
         }
         word.userInteractionEnabled = true
         word.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeDetail"))
         
         //desc
         desc = UITextView()
-        desc.text = "hahahahhaa"
+        desc.text = WordDesction
         view.addSubview(desc)
-        desc.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(view).offset(30)
+        desc.snp_updateConstraints{ (make) -> Void in
+            make.top.equalTo(view).offset(50)
             make.left.equalTo(view).offset(10)
             make.right.equalTo(view).offset(-100)
             make.bottom.equalTo(view).offset(0)

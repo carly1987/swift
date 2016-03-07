@@ -18,18 +18,18 @@ class WordCell: UICollectionViewCell {
         //word
         word = UILabel()
         self.addSubview(word)
-        word.snp_makeConstraints{ (make) -> Void in
+        word.snp_updateConstraints{ (make) -> Void in
             make.top.equalTo(self).offset(0)
             make.left.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)
-            make.height.equalTo(30)
+            make.height.equalTo(50)
         }
 //        word.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "openDetail"))
         
         //desc
         desc = UITextView()
         self.addSubview(desc)
-        desc.snp_makeConstraints{ (make) -> Void in
+        desc.snp_updateConstraints{ (make) -> Void in
             make.top.equalTo(self.word.snp_bottom).offset(0)
             make.left.equalTo(self).offset(10)
             make.right.equalTo(self).offset(-10)

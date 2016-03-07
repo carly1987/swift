@@ -11,25 +11,22 @@ import SnapKit
 class List: UIViewController, UIScrollViewDelegate{
     var label: UIRefreshControl!
     var list : WordController!
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder : aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-
         //list
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSizeMake(view.frame.width, 30)
+        flowLayout.itemSize = CGSizeMake(view.frame.width, 50)
         flowLayout.minimumLineSpacing = 1.0
         flowLayout.scrollDirection = .Vertical
         list = WordController(collectionViewLayout: flowLayout)
         view.addSubview(list.view)
-        list.view.snp_makeConstraints{ (make) -> Void in
+        list.view.snp_updateConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(64)
             make.left.equalTo(view).offset(0)
             make.right.equalTo(view).offset(0)

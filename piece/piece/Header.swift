@@ -24,7 +24,7 @@ class Header: UIViewController {
         nav.barTintColor = UIColor(red: 2/255, green: 193/255, blue: 73/255, alpha: 1.0)
         nav.barStyle = .Black
         view.addSubview(nav)
-        nav.snp_makeConstraints{ (make) -> Void in
+        nav.snp_updateConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(0)
             make.left.equalTo(view).offset(0)
             make.right.equalTo(view).offset(0)
