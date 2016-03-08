@@ -10,8 +10,16 @@ import UIKit
 import SnapKit
 class AnotherView : UIViewController{
     var nav : UINavigationBar!
-    var label : UILabel!
-    var PrevData = "String()"
+    var text : UITextView!
+    var PrevData : String!
+    init(data:String!) {
+        super.init(nibName: nil, bundle: nil)
+        PrevData = data
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder : aDecoder)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
@@ -32,13 +40,11 @@ class AnotherView : UIViewController{
         navItem.setLeftBarButtonItem(back, animated: false)
         nav.setItems([navItem], animated: false)
         
-        //label
-        label = UILabel()
-        label.text = "ppppp"
-        label.numberOfLines = 0
-        label.sizeToFit()
-        view.addSubview(label)
-        label.snp_makeConstraints{ (make) -> Void in
+        //text
+        text = UITextView()
+        text.text = PrevData
+        view.addSubview(text)
+        text.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(64)
             make.left.equalTo(view).offset(0)
             make.right.equalTo(view).offset(0)

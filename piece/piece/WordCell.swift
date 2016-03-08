@@ -26,15 +26,15 @@ class WordCell: UICollectionViewCell {
         }
 //        word.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "openDetail"))
         
-        //desc
-        desc = UITextView()
-        self.addSubview(desc)
-        desc.snp_updateConstraints{ (make) -> Void in
-            make.top.equalTo(self.word.snp_bottom).offset(0)
-            make.left.equalTo(self).offset(10)
-            make.right.equalTo(self).offset(-10)
-            make.bottom.equalTo(self).offset(0)
-        }
+//        //desc
+//        desc = UITextView()
+//        self.addSubview(desc)
+//        desc.snp_updateConstraints{ (make) -> Void in
+//            make.top.equalTo(self.word.snp_bottom).offset(0)
+//            make.left.equalTo(self).offset(10)
+//            make.right.equalTo(self).offset(-10)
+//            make.bottom.equalTo(self).offset(0)
+//        }
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

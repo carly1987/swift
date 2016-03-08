@@ -65,7 +65,7 @@ class WordController : UICollectionViewController{
         
         if let item = itemData.getItemData(indexPath.row) {
             wordCell.word.text = item.valueForKey("word") as? String
-            wordCell.desc.text = item.valueForKey("desc") as? String
+//            wordCell.desc.text = item.valueForKey("desc") as? String
         }
         
         return cell
