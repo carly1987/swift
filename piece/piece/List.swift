@@ -21,7 +21,7 @@ class List: UIViewController, UIScrollViewDelegate{
         super.viewDidLoad()
         //list
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSizeMake(view.frame.width, 50)
+//        flowLayout.itemSize = CGSizeMake(view.bounds.width, 50)
         flowLayout.minimumLineSpacing = 1.0
         flowLayout.scrollDirection = .Vertical
         list = WordController(collectionViewLayout: flowLayout)

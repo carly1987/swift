@@ -93,14 +93,15 @@ class WordController : UICollectionViewController{
     
     
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
-////        var screen:CGRect = UIScreen.mainScreen().bounds
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize{
+//        var screen:CGRect = UIScreen.mainScreen().bounds
 //        if(indexPath.row == selectedRow){
 //            return CGSizeMake(collectionView.bounds.width, 80)
 //        }else{
 //            return CGSizeMake(collectionView.bounds.width, 50)
 //        }
-//    }
+        return CGSizeMake(collectionView.frame.width, 50)
+    }
 
     func openDetail(wordTitle:String!,wordDesction:String!) {
         detail = Detail(wordTitle:wordTitle, wordDesction:wordDesction)
@@ -116,7 +117,6 @@ class WordController : UICollectionViewController{
     
     func closeDetail() {
         detail = nil
-        print("close")
     }
     
     func addWord(){

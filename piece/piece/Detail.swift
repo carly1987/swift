@@ -56,6 +56,5 @@ class Detail: UIViewController{
     
     func closeDetail(){
         view = nil
-        print("closeDetail")
     }
 }
