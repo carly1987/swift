@@ -18,13 +18,9 @@ class MainController: UIViewController{
         header = Header()
         view.addSubview(header.view)
         
-        
-        
         //list
-        list = List()
+        list = List(header: header)
         view.addSubview(list.view)
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

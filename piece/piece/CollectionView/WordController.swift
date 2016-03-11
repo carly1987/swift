@@ -1,5 +1,5 @@
 //
-//  WordController.swift
+//  WordControllerTemp.swift
 //  piece
 //
 //  Created by cieldon on 16/2/18.
@@ -10,17 +10,18 @@ import UIKit
 import SnapKit
 private let reuseIdentifier = "Cell"
 
-class WordController : UICollectionViewController{
+class WordControllerTemp : UICollectionViewController{
     var itemData : WordModel!
     var selectedRow = -1
     var detail : Detail!
+    var defaults = NSUserDefaults.standardUserDefaults()
 //    var refreshControl = UIRefreshControl()
     override init(collectionViewLayout layout: UICollectionViewLayout) {
         super.init(collectionViewLayout: layout)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder : aDecoder)
     }
     
     override func viewDidLoad() {
@@ -33,6 +34,8 @@ class WordController : UICollectionViewController{
         self.collectionView?.scrollsToTop = true
         
         self.collectionView?.delegate = self
+        
+        self.collectionView?.dataSource = self
         
         self.collectionView?.alwaysBounceVertical = true
         
@@ -118,10 +121,5 @@ class WordController : UICollectionViewController{
     func closeDetail() {
         detail = nil
     }
-    
-    func addWord(){
-        print("addWord")
-    }
-    
     
 }

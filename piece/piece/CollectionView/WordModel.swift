@@ -10,16 +10,16 @@ import Foundation
 
 class WordModel : NSObject {
     var data: [AnyObject?]!
-    
+    var defaults = NSUserDefaults.standardUserDefaults()
+    var words : [String]!
     override init() {
         super.init()
         
         data = Array()
-        data.append(["word":"www", "desc":"wwwww"])
-        data.append(["word":"vvv", "desc":"vvvvv"])
-        data.append(["word":"aaa", "desc":"aaaaa"])
-        data.append(["word":"bbb", "desc":"bbbbb"])
-        data.append(["word":"ccc", "desc":"ccccc"])
+        words = defaults.stringArrayForKey("words")
+        for var atIndex = 0; atIndex < words.count; ++atIndex{
+            data.append(["word":words[atIndex], "desc":""])
+        }
     }
     
     func getItemData(atIndex: Int) -> AnyObject? {

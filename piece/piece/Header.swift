@@ -11,11 +11,14 @@ import SnapKit
 
 class Header: UIViewController {
     var nav: UINavigationBar!
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    var navItem: UINavigationItem!
+    var prevButton: UIBarButtonItem!
+    var formToAddWord : FormToAddWord!
+    init() {
+        super.init(nibName: nil, bundle: nil)
     }
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder : aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +33,20 @@ class Header: UIViewController {
             make.right.equalTo(view).offset(0)
             make.height.equalTo(64)
         }
-        let navItem = UINavigationItem()
+        navItem = UINavigationItem()
         navItem.title = "Piece"
         nav.setItems([navItem], animated: false)
+    }
+    
+    func showPrev(form:FormToAddWord){
+        prevButton = UIBarButtonItem(title: "Back", style: .Done, target: self, action: "goToPrev")
+        navItem.setLeftBarButtonItem(prevButton, animated: false)
+        nav.setItems([navItem], animated: false)
+        formToAddWord = form
+    }
+    
+    func goToPrev(){
+        formToAddWord.view = nil
     }
     
 }

@@ -1,58 +1,66 @@
 //
-//  Detail.swift
+//  FormToAddWord.swift
 //  piece
 //
-//  Created by cieldon on 16/3/1.
+//  Created by cieldon on 16/3/9.
 //  Copyright © 2016年 ___carly___. All rights reserved.
 //
 
 import UIKit
 import SnapKit
-class Detail: UIViewController{
-    var word : UILabel!
+class FormToAddWord: UIViewController, UITextFieldDelegate{
+    var word : UITextField!
     var desc : UITextView!
-    var WordTitle : String!
-    var WordDesction : String!
-    init(wordTitle: String!, wordDesction: String!) {
+    var defaults = NSUserDefaults.standardUserDefaults()
+    var words : [String]!
+    var descs : [String]!
+    init() {
         super.init(nibName: nil, bundle: nil)
-        WordTitle = wordTitle
-        WordDesction = wordDesction
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder : aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //word
-        word = UILabel()
-        word.text = WordTitle
+        view.backgroundColor = UIColor.whiteColor()
+        word = UITextField()
+        word.delegate = self
+        word.placeholder = "请输入单词"
         view.addSubview(word)
-        word.snp_updateConstraints{ (make) -> Void in
+        word.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(0)
             make.left.equalTo(view).offset(10)
             make.right.equalTo(view).offset(-10)
             make.height.equalTo(50)
         }
-        word.userInteractionEnabled = true
-        word.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeDetail"))
         
-        //desc
         desc = UITextView()
-        desc.text = WordDesction
+        desc.text = "请输入"
         view.addSubview(desc)
-        desc.snp_updateConstraints{ (make) -> Void in
+        desc.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(50)
             make.left.equalTo(view).offset(10)
             make.right.equalTo(view).offset(-10)
             make.bottom.equalTo(view).offset(0)
         }
+        words = defaults.stringArrayForKey("words")
+        if(words == nil){
+            words = []
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+//    func textFieldShouldReturn(textField: UITextField) -> Bool{
+//        textField.resignFirstResponder()
+//        words.append(textField.text!)
+//        print(words)
+//        defaults.setObject(words, forKey: "words")
+//        view = nil
+//        return true
+//    }
 }
