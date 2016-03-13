@@ -16,7 +16,7 @@ class TableViewController: UITableViewController{
     }
     
     required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder : aDecoder)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,12 @@ class TableViewController: UITableViewController{
         header = UINavigationBar()
         header.barStyle = .Default
         let navitem = UINavigationItem()
-        
+//        self.navigationController?.navigationBarHidden = false
         let edit = UIBarButtonItem(title: "Edit", style: .Done, target: self, action: "edit:")
-        navitem.title = "movies"
+        let add = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "add:")
         navitem.setLeftBarButtonItem(edit, animated: false)
+        navitem.setRightBarButtonItem(add, animated: false)
+        navitem.title = "movies"
         header.setItems([navitem], animated: false)
         return header
     }
@@ -75,5 +77,9 @@ class TableViewController: UITableViewController{
             self.editing = true
             btn.title = "End"
         }
+    }
+    
+    func add(btn:UIBarButtonItem){
+        self.presentViewController(PassingDataToAnotherView(),animated: false, completion: nil)
     }
 }

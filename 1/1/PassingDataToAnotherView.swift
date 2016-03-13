@@ -49,7 +49,8 @@ class PassingDataToAnotherView: UIViewController, UITextViewDelegate{
     }
     
     func done(btn:UIBarButtonItem){
-            let v = textView.text
-        self.presentViewController(AnotherView(data:v),animated: false, completion: nil)
+//            let v = textView.text
+//        self.presentViewController(AnotherView(data:v),animated: false, completion: nil)
+        self.presentViewController(TableView(),animated: false, completion: nil)
     }
 }

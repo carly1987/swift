@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E69F1E99A6492571A2A3CF0E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46E65DAA0603B996830A851 /* Pods.framework */; };
+		F973CECF1C95C3BA00949C8A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F973CECC1C95C3BA00949C8A /* TableViewCell.swift */; };
+		F973CED01C95C3BA00949C8A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F973CECD1C95C3BA00949C8A /* TableViewController.swift */; };
+		F973CED11C95C3BA00949C8A /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F973CECE1C95C3BA00949C8A /* TableViewModel.swift */; };
 		F977B5AB1C3F571F003FDFAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977B5AA1C3F571F003FDFAE /* AppDelegate.swift */; };
 		F977B5AD1C3F571F003FDFAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977B5AC1C3F571F003FDFAE /* ViewController.swift */; };
 		F977B5B01C3F571F003FDFAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F977B5AE1C3F571F003FDFAE /* Main.storyboard */; };
@@ -20,9 +23,6 @@
 		F9A5190A1C44E57800CFFF12 /* TipCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A519091C44E57800CFFF12 /* TipCalculator.swift */; };
 		F9A5190E1C44F4DD00CFFF12 /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5190D1C44F4DD00CFFF12 /* TipCalculatorModel.swift */; };
 		F9A519101C45EFF000CFFF12 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5190F1C45EFF000CFFF12 /* TableView.swift */; };
-		F9D4CF2D1C45F8F900B8F291 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF2C1C45F8F900B8F291 /* TableViewController.swift */; };
-		F9D4CF2F1C4626E400B8F291 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF2E1C4626E400B8F291 /* TableViewModel.swift */; };
-		F9D4CF311C4633ED00B8F291 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF301C4633ED00B8F291 /* TableViewCell.swift */; };
 		F9D4CF331C46773100B8F291 /* CurrentDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF321C46773100B8F291 /* CurrentDate.swift */; };
 		F9D4CF351C47473100B8F291 /* PassingDataToAnotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF341C47473100B8F291 /* PassingDataToAnotherView.swift */; };
 		F9D4CF371C478A5600B8F291 /* AnotherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D4CF361C478A5600B8F291 /* AnotherView.swift */; };
@@ -49,6 +49,9 @@
 		73ABE50E35126B4DDA2CABBA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A46E65DAA0603B996830A851 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D833C8218ADBC51A1ADB7E75 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F973CECC1C95C3BA00949C8A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		F973CECD1C95C3BA00949C8A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		F973CECE1C95C3BA00949C8A /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		F977B5A71C3F571F003FDFAE /* 1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F977B5AA1C3F571F003FDFAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F977B5AC1C3F571F003FDFAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,9 +70,6 @@
 		F9A519091C44E57800CFFF12 /* TipCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 		F9A5190D1C44F4DD00CFFF12 /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
 		F9A5190F1C45EFF000CFFF12 /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		F9D4CF2C1C45F8F900B8F291 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		F9D4CF2E1C4626E400B8F291 /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
-		F9D4CF301C4633ED00B8F291 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F9D4CF321C46773100B8F291 /* CurrentDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentDate.swift; sourceTree = "<group>"; };
 		F9D4CF341C47473100B8F291 /* PassingDataToAnotherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassingDataToAnotherView.swift; sourceTree = "<group>"; };
 		F9D4CF361C478A5600B8F291 /* AnotherView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnotherView.swift; sourceTree = "<group>"; };
@@ -143,11 +143,13 @@
 		F977B5A91C3F571F003FDFAE /* 1 */ = {
 			isa = PBXGroup;
 			children = (
-				F9D4CF2B1C45F8A800B8F291 /* TableView */,
 				F977B5AA1C3F571F003FDFAE /* AppDelegate.swift */,
 				F977B5AC1C3F571F003FDFAE /* ViewController.swift */,
 				F9D4CF321C46773100B8F291 /* CurrentDate.swift */,
 				F9D4CF341C47473100B8F291 /* PassingDataToAnotherView.swift */,
+				F973CECC1C95C3BA00949C8A /* TableViewCell.swift */,
+				F973CECD1C95C3BA00949C8A /* TableViewController.swift */,
+				F973CECE1C95C3BA00949C8A /* TableViewModel.swift */,
 				F9D4CF361C478A5600B8F291 /* AnotherView.swift */,
 				F9A519091C44E57800CFFF12 /* TipCalculator.swift */,
 				F9A5190D1C44F4DD00CFFF12 /* TipCalculatorModel.swift */,
@@ -178,16 +180,6 @@
 				F977B5CC1C3F571F003FDFAE /* Info.plist */,
 			);
 			path = 1UITests;
-			sourceTree = "<group>";
-		};
-		F9D4CF2B1C45F8A800B8F291 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				F9D4CF2C1C45F8F900B8F291 /* TableViewController.swift */,
-				F9D4CF301C4633ED00B8F291 /* TableViewCell.swift */,
-				F9D4CF2E1C4626E400B8F291 /* TableViewModel.swift */,
-			);
-			path = TableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -379,14 +371,14 @@
 				F977B5AD1C3F571F003FDFAE /* ViewController.swift in Sources */,
 				F9A519081C438D0900CFFF12 /* IAD.swift in Sources */,
 				F9D4CF351C47473100B8F291 /* PassingDataToAnotherView.swift in Sources */,
-				F9D4CF2D1C45F8F900B8F291 /* TableViewController.swift in Sources */,
 				F9D4CF371C478A5600B8F291 /* AnotherView.swift in Sources */,
 				F9A519101C45EFF000CFFF12 /* TableView.swift in Sources */,
-				F9D4CF311C4633ED00B8F291 /* TableViewCell.swift in Sources */,
+				F973CECF1C95C3BA00949C8A /* TableViewCell.swift in Sources */,
+				F973CED01C95C3BA00949C8A /* TableViewController.swift in Sources */,
 				F9A5190E1C44F4DD00CFFF12 /* TipCalculatorModel.swift in Sources */,
-				F9D4CF2F1C4626E400B8F291 /* TableViewModel.swift in Sources */,
 				F9D4CF331C46773100B8F291 /* CurrentDate.swift in Sources */,
 				F977B5AB1C3F571F003FDFAE /* AppDelegate.swift in Sources */,
+				F973CED11C95C3BA00949C8A /* TableViewModel.swift in Sources */,
 				F9A5190A1C44E57800CFFF12 /* TipCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

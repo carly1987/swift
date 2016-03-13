@@ -8,25 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		ADF89ED2EE14D882BF78F7DD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F0991E6D393E90655A5DFA /* Pods.framework */; };
-		F9090D2B1C687BC000639052 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9090D2A1C687BC000639052 /* MainController.swift */; };
-		F9090D2D1C687CC600639052 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9090D2C1C687CC600639052 /* Header.swift */; };
-		F98248FB1C8FC78800F8797A /* FormToAddWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98248FA1C8FC78800F8797A /* FormToAddWord.swift */; };
-		F98249021C92C3E600F8797A /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98248FF1C92C3E600F8797A /* WordCell.swift */; };
-		F98249031C92C3E600F8797A /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98249001C92C3E600F8797A /* WordController.swift */; };
-		F98249041C92C3E600F8797A /* WordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98249011C92C3E600F8797A /* WordModel.swift */; };
+		F973CED51C95CDC000949C8A /* temp in Resources */ = {isa = PBXBuildFile; fileRef = F973CED41C95CDC000949C8A /* temp */; };
+		F973CED71C95D25F00949C8A /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F973CED61C95D25F00949C8A /* Detail.swift */; };
+		F973CED91C95D34400949C8A /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = F973CED81C95D34400949C8A /* Header.swift */; };
 		F98249071C92C53800F8797A /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98249061C92C53800F8797A /* TableViewController.swift */; };
 		F98249091C92C56500F8797A /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98249081C92C56500F8797A /* TableViewModel.swift */; };
 		F982490B1C92C77F00F8797A /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F982490A1C92C77F00F8797A /* TableViewCell.swift */; };
 		F982490F1C92C9AD00F8797A /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F982490E1C92C9AD00F8797A /* TableView.swift */; };
 		F99D98D71C6877EB00616A60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D98D61C6877EB00616A60 /* AppDelegate.swift */; };
-		F99D98D91C6877EB00616A60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D98D81C6877EB00616A60 /* ViewController.swift */; };
 		F99D98DC1C6877EB00616A60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99D98DA1C6877EB00616A60 /* Main.storyboard */; };
 		F99D98DE1C6877EB00616A60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F99D98DD1C6877EB00616A60 /* Assets.xcassets */; };
 		F99D98E11C6877EB00616A60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99D98DF1C6877EB00616A60 /* LaunchScreen.storyboard */; };
 		F99D98EC1C6877EB00616A60 /* pieceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D98EB1C6877EB00616A60 /* pieceTests.swift */; };
 		F99D98F71C6877EB00616A60 /* pieceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99D98F61C6877EB00616A60 /* pieceUITests.swift */; };
-		F9E212931C745CC700BB599C /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E212921C745CC700BB599C /* List.swift */; };
-		F9F6809E1C859FD20060DDDF /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9F6809D1C859FD10060DDDF /* Detail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,19 +44,15 @@
 		3161F9C8D374BE335EFB6B82 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		34F0991E6D393E90655A5DFA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD32CD528E45B9C54971D3D8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F9090D2A1C687BC000639052 /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
-		F9090D2C1C687CC600639052 /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
-		F98248FA1C8FC78800F8797A /* FormToAddWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormToAddWord.swift; sourceTree = "<group>"; };
-		F98248FF1C92C3E600F8797A /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
-		F98249001C92C3E600F8797A /* WordController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
-		F98249011C92C3E600F8797A /* WordModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordModel.swift; sourceTree = "<group>"; };
+		F973CED41C95CDC000949C8A /* temp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = temp; sourceTree = "<group>"; };
+		F973CED61C95D25F00949C8A /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		F973CED81C95D34400949C8A /* Header.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		F98249061C92C53800F8797A /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		F98249081C92C56500F8797A /* TableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
 		F982490A1C92C77F00F8797A /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		F982490E1C92C9AD00F8797A /* TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		F99D98D31C6877EB00616A60 /* piece.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = piece.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99D98D61C6877EB00616A60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F99D98D81C6877EB00616A60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F99D98DB1C6877EB00616A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F99D98DD1C6877EB00616A60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F99D98E01C6877EB00616A60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -73,8 +63,6 @@
 		F99D98F21C6877EB00616A60 /* pieceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pieceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99D98F61C6877EB00616A60 /* pieceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pieceUITests.swift; sourceTree = "<group>"; };
 		F99D98F81C6877EB00616A60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F9E212921C745CC700BB599C /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		F9F6809D1C859FD10060DDDF /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,16 +108,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F98248FE1C92C3E600F8797A /* CollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				F98248FF1C92C3E600F8797A /* WordCell.swift */,
-				F98249001C92C3E600F8797A /* WordController.swift */,
-				F98249011C92C3E600F8797A /* WordModel.swift */,
-			);
-			path = CollectionView;
-			sourceTree = "<group>";
-		};
 		F98249051C92C3EE00F8797A /* TableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +121,7 @@
 		F99D98CA1C6877EB00616A60 = {
 			isa = PBXGroup;
 			children = (
+				F973CED41C95CDC000949C8A /* temp */,
 				F99D98D51C6877EB00616A60 /* piece */,
 				F99D98EA1C6877EB00616A60 /* pieceTests */,
 				F99D98F51C6877EB00616A60 /* pieceUITests */,
@@ -166,15 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				F982490E1C92C9AD00F8797A /* TableView.swift */,
+				F973CED81C95D34400949C8A /* Header.swift */,
+				F973CED61C95D25F00949C8A /* Detail.swift */,
 				F99D98D61C6877EB00616A60 /* AppDelegate.swift */,
-				F99D98D81C6877EB00616A60 /* ViewController.swift */,
-				F9090D2A1C687BC000639052 /* MainController.swift */,
 				F98249051C92C3EE00F8797A /* TableView */,
-				F98248FE1C92C3E600F8797A /* CollectionView */,
-				F9E212921C745CC700BB599C /* List.swift */,
-				F98248FA1C8FC78800F8797A /* FormToAddWord.swift */,
-				F9F6809D1C859FD10060DDDF /* Detail.swift */,
-				F9090D2C1C687CC600639052 /* Header.swift */,
 				F99D98DA1C6877EB00616A60 /* Main.storyboard */,
 				F99D98DD1C6877EB00616A60 /* Assets.xcassets */,
 				F99D98DF1C6877EB00616A60 /* LaunchScreen.storyboard */,
@@ -311,6 +285,7 @@
 			files = (
 				F99D98E11C6877EB00616A60 /* LaunchScreen.storyboard in Resources */,
 				F99D98DE1C6877EB00616A60 /* Assets.xcassets in Resources */,
+				F973CED51C95CDC000949C8A /* temp in Resources */,
 				F99D98DC1C6877EB00616A60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,18 +360,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F982490B1C92C77F00F8797A /* TableViewCell.swift in Sources */,
-				F9E212931C745CC700BB599C /* List.swift in Sources */,
-				F9090D2D1C687CC600639052 /* Header.swift in Sources */,
 				F982490F1C92C9AD00F8797A /* TableView.swift in Sources */,
-				F99D98D91C6877EB00616A60 /* ViewController.swift in Sources */,
+				F973CED71C95D25F00949C8A /* Detail.swift in Sources */,
+				F973CED91C95D34400949C8A /* Header.swift in Sources */,
 				F98249091C92C56500F8797A /* TableViewModel.swift in Sources */,
-				F9090D2B1C687BC000639052 /* MainController.swift in Sources */,
-				F98248FB1C8FC78800F8797A /* FormToAddWord.swift in Sources */,
-				F98249041C92C3E600F8797A /* WordModel.swift in Sources */,
 				F98249071C92C53800F8797A /* TableViewController.swift in Sources */,
-				F98249031C92C3E600F8797A /* WordController.swift in Sources */,
-				F9F6809E1C859FD20060DDDF /* Detail.swift in Sources */,
-				F98249021C92C3E600F8797A /* WordCell.swift in Sources */,
 				F99D98D71C6877EB00616A60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

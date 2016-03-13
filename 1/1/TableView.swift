@@ -12,6 +12,7 @@ class TableView: UIViewController{
     var tableview : TableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableview = TableViewController(style: .Plain)
         view.addSubview(tableview.view)
         tableview.view.snp_makeConstraints{ (make) -> Void in

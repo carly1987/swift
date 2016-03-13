@@ -9,13 +9,18 @@
 import UIKit
 import SnapKit
 class TableView: UIViewController{
+    var header : Header!
     var tableview : TableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        header = Header(type:0, word:nil, desc:nil)
+        view.addSubview(header.view)
+        
         tableview = TableViewController(style: .Plain)
         view.addSubview(tableview.view)
         tableview.view.snp_makeConstraints{ (make) -> Void in
-            make.top.equalTo(view).offset(0)
+            make.top.equalTo(view).offset(64)
             make.left.equalTo(view).offset(0)
             make.right.equalTo(view).offset(0)
             make.bottom.equalTo(view).offset(0)
