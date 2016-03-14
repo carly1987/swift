@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 class Detail: UIViewController, UITextFieldDelegate{
-    var header : Header!
     var word : UITextField!
     var desc : UITextView!
     var defaults = NSUserDefaults.standardUserDefaults()
@@ -19,6 +18,18 @@ class Detail: UIViewController, UITextFieldDelegate{
     var WordDesction : String!
     init(id:Int!) {
         super.init(nibName: nil, bundle: nil)
+        view.backgroundColor = UIColor.whiteColor()
+        words = defaults.stringArrayForKey("words")
+        descs = defaults.stringArrayForKey("descs")
+        
+        let navItem = self.navigationItem
+        navItem.title = "Type"
+        let prev = UIBarButtonItem(title: "Prev", style: .Done, target: self, action: nil)
+        let done = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "done:")
+        navItem.backBarButtonItem = prev
+        navItem.setRightBarButtonItem(done, animated: false)
+
+        
         words = defaults.stringArrayForKey("words")
         descs = defaults.stringArrayForKey("descs")
 //        WordTitle = words[id]
@@ -32,8 +43,7 @@ class Detail: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        header = Header(type:1,word:word,desc:desc)
-        view.addSubview(header.view)
+        
         
         //word
         word = UITextField()
@@ -58,7 +68,13 @@ class Detail: UIViewController, UITextFieldDelegate{
             make.bottom.equalTo(view).offset(0)
         }
     }
-    
+    func done(btn:UIBarButtonItem){
+        words.append(word.text!)
+        descs.append(desc.text!)
+        defaults.setObject(words, forKey: "words")
+        defaults.setObject(descs, forKey: "descs")
+        self.navigationController?.pushViewController(TableView(), animated: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

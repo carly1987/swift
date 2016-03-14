@@ -19,11 +19,11 @@ class TableViewModel : NSObject {
         data = Array()
         words = defaults.stringArrayForKey("words")
         descs = defaults.stringArrayForKey("descs")
-        data.append(["word":"", "desc":""])
+        data.append(["word":"1", "desc":"1"])
         
-//        for var atIndex = 0; atIndex < words.count; ++atIndex{
-//            data.append(["word":words[atIndex], "desc":descs[atIndex]])
-//        }
+        for var atIndex = 0; atIndex < words.count; ++atIndex{
+            data.append(["word":words[atIndex], "desc":descs[atIndex]])
+        }
     }
     
     func getItemData(atIndex: Int) -> AnyObject? {

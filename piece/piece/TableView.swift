@@ -8,14 +8,14 @@
 
 import UIKit
 import SnapKit
-class TableView: UIViewController{
-    var header : Header!
+class TableView: UIViewController, UINavigationControllerDelegate{
     var tableview : TableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        header = Header(type:0, word:nil, desc:nil)
-        view.addSubview(header.view)
+        let navItem = self.navigationItem
+        navItem.title = "Piece"
+        let add = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "add:")
+        navItem.setRightBarButtonItem(add, animated: false)
         
         tableview = TableViewController(style: .Plain)
         view.addSubview(tableview.view)
@@ -26,7 +26,9 @@ class TableView: UIViewController{
             make.bottom.equalTo(view).offset(0)
         }
     }
-    
+    func add(btn:UIBarButtonItem){
+        self.navigationController?.pushViewController(Detail(id:0), animated: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

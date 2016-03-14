@@ -16,6 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let navi = Navigation()
+        let table = TableView()
+        navi.pushViewController(table, animated: false)
+        self.window?.rootViewController = navi
         return true
     }
 

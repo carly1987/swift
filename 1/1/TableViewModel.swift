@@ -13,7 +13,7 @@ class TableViewModel : NSObject {
     
     override init() {
         super.init()
-        
+    
         data = Array()
         data.append(["title":"Iron", "description":"Iron Man"])
         data.append(["title":"Spider", "description":"Spider Man"])

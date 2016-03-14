@@ -19,6 +19,7 @@
 		F977B5C01C3F571F003FDFAE /* _Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977B5BF1C3F571F003FDFAE /* _Tests.swift */; };
 		F977B5CB1C3F571F003FDFAE /* _UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977B5CA1C3F571F003FDFAE /* _UITests.swift */; };
 		F977B5D91C3F60A6003FDFAE /* TapCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F977B5D81C3F60A6003FDFAE /* TapCounter.swift */; };
+		F99907CC1C96968500001A67 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99907CB1C96968500001A67 /* Navigation.swift */; };
 		F9A519081C438D0900CFFF12 /* IAD.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A519071C438D0900CFFF12 /* IAD.swift */; };
 		F9A5190A1C44E57800CFFF12 /* TipCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A519091C44E57800CFFF12 /* TipCalculator.swift */; };
 		F9A5190E1C44F4DD00CFFF12 /* TipCalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5190D1C44F4DD00CFFF12 /* TipCalculatorModel.swift */; };
@@ -66,6 +67,7 @@
 		F977B5CA1C3F571F003FDFAE /* _UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _UITests.swift; sourceTree = "<group>"; };
 		F977B5CC1C3F571F003FDFAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F977B5D81C3F60A6003FDFAE /* TapCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapCounter.swift; sourceTree = "<group>"; };
+		F99907CB1C96968500001A67 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		F9A519071C438D0900CFFF12 /* IAD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAD.swift; sourceTree = "<group>"; };
 		F9A519091C44E57800CFFF12 /* TipCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 		F9A5190D1C44F4DD00CFFF12 /* TipCalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculatorModel.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				F977B5AA1C3F571F003FDFAE /* AppDelegate.swift */,
+				F99907CB1C96968500001A67 /* Navigation.swift */,
 				F977B5AC1C3F571F003FDFAE /* ViewController.swift */,
 				F9D4CF321C46773100B8F291 /* CurrentDate.swift */,
 				F9D4CF341C47473100B8F291 /* PassingDataToAnotherView.swift */,
@@ -376,6 +379,7 @@
 				F973CECF1C95C3BA00949C8A /* TableViewCell.swift in Sources */,
 				F973CED01C95C3BA00949C8A /* TableViewController.swift in Sources */,
 				F9A5190E1C44F4DD00CFFF12 /* TipCalculatorModel.swift in Sources */,
+				F99907CC1C96968500001A67 /* Navigation.swift in Sources */,
 				F9D4CF331C46773100B8F291 /* CurrentDate.swift in Sources */,
 				F977B5AB1C3F571F003FDFAE /* AppDelegate.swift in Sources */,
 				F973CED11C95C3BA00949C8A /* TableViewModel.swift in Sources */,
