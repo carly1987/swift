@@ -9,7 +9,6 @@
 import UIKit
 import SnapKit
 class TableViewController: UITableViewController{
-    var header : Header!
     var itemData : TableViewModel!
     override init(style: UITableViewStyle){
         super.init(style: style)
@@ -44,12 +43,14 @@ class TableViewController: UITableViewController{
         if let item = itemData.getItemData(indexPath.row) {
             listcell.textLabel!.text = item.valueForKey("word") as? String
         }
-            
         return cell
         
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        self.navigationController?.pushViewController(Detail(id:indexPath.row), animated: false)
+//        self.navigationController?.popToViewController(Detail(id:indexPath.row), animated: false)
+        print(self)
     }
     
 }

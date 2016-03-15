@@ -19,8 +19,24 @@ class Detail: UIViewController, UITextFieldDelegate{
     init(id:Int!) {
         super.init(nibName: nil, bundle: nil)
         view.backgroundColor = UIColor.whiteColor()
-        words = defaults.stringArrayForKey("words")
-        descs = defaults.stringArrayForKey("descs")
+        if(defaults.stringArrayForKey("words") != nil){
+            words = defaults.stringArrayForKey("words")
+        }else{
+            words = []
+        }
+        if(defaults.stringArrayForKey("descs") != nil){
+            descs = defaults.stringArrayForKey("descs")
+        }else{
+            descs = []
+        }
+        print(id)
+        if(id != nil){
+            WordTitle = words[id]
+            WordDesction = descs[id]
+        }else{
+            WordTitle = ""
+            WordDesction = ""
+        }
         
         let navItem = self.navigationItem
         navItem.title = "Type"
@@ -28,14 +44,8 @@ class Detail: UIViewController, UITextFieldDelegate{
         let done = UIBarButtonItem(title: "Done", style: .Done, target: self, action: "done:")
         navItem.backBarButtonItem = prev
         navItem.setRightBarButtonItem(done, animated: false)
+       
 
-        
-        words = defaults.stringArrayForKey("words")
-        descs = defaults.stringArrayForKey("descs")
-//        WordTitle = words[id]
-//        WordDesction = descs[id]
-        WordTitle = "123"
-        WordDesction = "456"
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder : aDecoder)
@@ -43,12 +53,11 @@ class Detail: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         //word
         word = UITextField()
         word.delegate = self
-        word.placeholder = WordTitle
+        word.placeholder = "点击输入"
+        word.text = WordTitle
         view.addSubview(word)
         word.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(64)
@@ -73,7 +82,7 @@ class Detail: UIViewController, UITextFieldDelegate{
         descs.append(desc.text!)
         defaults.setObject(words, forKey: "words")
         defaults.setObject(descs, forKey: "descs")
-        self.navigationController?.pushViewController(TableView(), animated: false)
+        self.navigationController?.popViewControllerAnimated(false)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

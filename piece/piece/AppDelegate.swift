@@ -18,6 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Override point for customization after application launch.
         
         let nav = UINavigationController()
+        let navBar = nav.navigationBar
+        navBar.barTintColor = UIColor(red: 2/255, green: 193/255, blue: 73/255, alpha: 1.0)
+        navBar.barStyle = .Black
+        navBar.tintColor = UIColor.whiteColor()
         self.window?.rootViewController = nav
         nav.pushViewController(TableView(), animated: false)
         return true

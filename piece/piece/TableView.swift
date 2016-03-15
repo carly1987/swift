@@ -12,6 +12,8 @@ class TableView: UIViewController, UINavigationControllerDelegate{
     var tableview : TableViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
+        
         let navItem = self.navigationItem
         navItem.title = "Piece"
         let add = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "add:")
@@ -27,7 +29,8 @@ class TableView: UIViewController, UINavigationControllerDelegate{
         }
     }
     func add(btn:UIBarButtonItem){
-        self.navigationController?.pushViewController(Detail(id:0), animated: false)
+        self.navigationController?.pushViewController(Detail(id:nil), animated: false)
+        print(self.navigationController)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -1,0 +1,78 @@
+PODS:
+  - 1PasswordExtension (1.8)
+  - Alamofire (3.1.4)
+  - AlamofireObjectMapper (2.1.0):
+    - Alamofire (~> 3.1.0)
+    - ObjectMapper (~> 1.0)
+  - Crashlytics (3.6.0):
+    - Fabric (~> 1.6.3)
+  - CXSwipeGestureRecognizer (1.0.2)
+  - DrawerController (1.1.0):
+    - DrawerController/Core (= 1.1.0)
+    - DrawerController/DrawerVisualStates (= 1.1.0)
+  - DrawerController/Core (1.1.0)
+  - DrawerController/DrawerVisualStates (1.1.0):
+    - DrawerController/Core
+  - Fabric (1.6.5)
+  - FXBlurView (1.6.4)
+  - INSImageView (0.1.5)
+  - Ji (1.2.0):
+    - Ji/Ji (= 1.2.0)
+  - Ji/Ji (1.2.0):
+    - Ji/Ji-libxml
+  - Ji/Ji-libxml (1.2.0)
+  - KeychainSwift (3.0.11)
+  - Kingfisher (1.9.1)
+  - KVOController (1.0.3)
+  - MJRefresh (3.1.0)
+  - ObjectMapper (1.1.1)
+  - Shimmer (1.0.2)
+  - SnapKit (0.18.0)
+  - SVProgressHUD (1.1.3)
+  - YYText (0.9.18)
+
+DEPENDENCIES:
+  - 1PasswordExtension (~> 1.8)
+  - Alamofire (~> 3.1.4)
+  - AlamofireObjectMapper (~> 2.1.0)
+  - Crashlytics
+  - CXSwipeGestureRecognizer (~> 1.0.2)
+  - DrawerController (~> 1.1.0)
+  - Fabric
+  - FXBlurView (~> 1.6.4)
+  - INSImageView (~> 0.1.5)
+  - Ji (~> 1.2.0)
+  - KeychainSwift (~> 3.0.11)
+  - Kingfisher (~> 1.9.1)
+  - KVOController (~> 1.0.3)
+  - MJRefresh (~> 3.1.0)
+  - ObjectMapper (~> 1.1.1)
+  - Shimmer (~> 1.0.2)
+  - SnapKit (~> 0.18.0)
+  - SVProgressHUD (~> 1.1.3)
+  - YYText (~> 0.9.18)
+
+SPEC CHECKSUMS:
+  1PasswordExtension: 627d5aecf210c7636968faf5a4c3546c9531385b
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  AlamofireObjectMapper: 24097576202064f8b0a583452dd934064f78dc0e
+  Crashlytics: e4e8d02914f2608fbc7bf42b1a7af838b0db67a2
+  CXSwipeGestureRecognizer: 2f340869fd75f46bb23f69f5f56b7dd1e607170b
+  DrawerController: 8fd56e6238399a08c4af054fbea0ef8669cd81f3
+  Fabric: 338ffd3c2afcab120638907b4251189de9ad17b3
+  FXBlurView: db786c2561cb49a09ae98407f52460096ab8a44f
+  INSImageView: 53d61eb556aab51902d6eda4f1f97535cb24511f
+  Ji: ddebb22f9ac445db6e884b66f78ea74fb135fdb7
+  KeychainSwift: 0a4214c910423543a42b0f30f25987d46178b6a5
+  Kingfisher: 98fedd5d44d982b331fc7303f9f6144b7d8ba289
+  KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
+  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  ObjectMapper: 4143abed1dbd49b73d75092fe8fa1c88ed6434b7
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
+  SnapKit: e1f090a6d47b1dd4bd89b73f72b6746a7835ef3c
+  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  YYText: f098883789a7336ff3e13653ba7c7cb1a07ca560
+
+PODFILE CHECKSUM: cc641caa4ca83ef2d14d5cba7237d8c9175da69b
+
+COCOAPODS: 1.0.0.beta.3
