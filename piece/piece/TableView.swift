@@ -30,7 +30,6 @@ class TableView: UIViewController, UINavigationControllerDelegate{
     }
     func add(btn:UIBarButtonItem){
         self.navigationController?.pushViewController(Detail(id:nil), animated: false)
-        print(self.navigationController)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

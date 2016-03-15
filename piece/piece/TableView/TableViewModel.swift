@@ -15,23 +15,22 @@ class TableViewModel : NSObject {
     var descs : [String]!
     override init() {
         super.init()
-        
         data = Array()
-//        if(defaults.stringArrayForKey("words") != nil){
-//            words = defaults.stringArrayForKey("words")
-//        }else{
-//            words = []
-//        }
-//        if(defaults.stringArrayForKey("descs") != nil){
-//            descs = defaults.stringArrayForKey("descs")
-//        }else{
-//            descs = []
-//        }
-//        if(words.count>0 && descs.count>0){
-//            for var atIndex = 0; atIndex < words.count; ++atIndex{
-//                data.append(["word":words[atIndex], "desc":descs[atIndex]])
-//            }
-//        }
+        if(defaults.stringArrayForKey("words") != nil){
+            words = defaults.stringArrayForKey("words")
+        }else{
+            words = []
+        }
+        if(defaults.stringArrayForKey("descs") != nil){
+            descs = defaults.stringArrayForKey("descs")
+        }else{
+            descs = []
+        }
+        if(words.count>0 && descs.count>0){
+            for var atIndex = 0; atIndex < words.count; ++atIndex{
+                data.append(["word":words[atIndex], "desc":descs[atIndex]])
+            }
+        }
     }
     
     func getItemData(atIndex: Int) -> AnyObject? {

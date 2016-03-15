@@ -10,76 +10,7 @@ import UIKit
 import SnapKit
 private let reuseIdentifier = "Cell"
 
-class WordControllerTemp : UICollectionViewController{
-    var itemData : WordModel!
-    var selectedRow = -1
-    var detail : Detail!
-    var defaults = NSUserDefaults.standardUserDefaults()
-//    var refreshControl = UIRefreshControl()
-    override init(collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(collectionViewLayout: layout)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder : aDecoder)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.collectionView?.backgroundColor = nil
-        self.collectionView!.registerClass(WordCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-        
-        self.collectionView?.decelerationRate = 2
-        
-        self.collectionView?.scrollsToTop = true
-        
-        self.collectionView?.delegate = self
-        
-        self.collectionView?.dataSource = self
-        
-        self.collectionView?.alwaysBounceVertical = true
-        
-        itemData = WordModel()
-        
-//        self.automaticallyAdjustsScrollViewInsets = false
-//        
-//        refreshControl.addTarget(self, action: "addWord", forControlEvents: UIControlEvents.ValueChanged)
-//        refreshControl.attributedTitle = NSAttributedString(string: "松开后")
-//        self.collectionView?.addSubview(refreshControl)
-//        addWord()
-        
-    }
-    
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return itemData.data.count
-    }
-    
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath)
-        
-        let wordCell = cell as! WordCell
-        // Configure the cell
-        
-        if let item = itemData.getItemData(indexPath.row) {
-            wordCell.word.text = item.valueForKey("word") as? String
-//            wordCell.desc.text = item.valueForKey("desc") as? String
-        }
-        
-        return cell
-    }
-    
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-//        if (selectedRow == indexPath.row){
-//            selectedRow = -1
-//            closeDetail()
-//        }else{
-//            selectedRow = indexPath.row
+class WordControllerTemp : UICollectionView)ectedRow = indexPath.row
 //            openDetail()
 //        }
         var wordTitle : String!

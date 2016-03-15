@@ -29,7 +29,6 @@ class Detail: UIViewController, UITextFieldDelegate{
         }else{
             descs = []
         }
-        print(id)
         if(id != nil){
             WordTitle = words[id]
             WordDesction = descs[id]

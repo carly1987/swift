@@ -48,7 +48,7 @@ class TableViewController: UITableViewController{
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        self.navigationController?.pushViewController(Detail(id:indexPath.row), animated: false)
+        self.navigationController?.pushViewController(Detail(id:nil), animated: false)
 //        self.navigationController?.popToViewController(Detail(id:indexPath.row), animated: false)
         print(self)
     }
