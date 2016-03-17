@@ -2,14 +2,12 @@
 //  AppDelegate.swift
 //  Piece
 //
-//  Created by cieldon on 16/3/16.
+//  Created by cieldon on 16/3/17.
 //  Copyright © 2016年 cieldon. All rights reserved.
 //
 
 import UIKit
 
-import DrawerController
-import SVProgressHUD
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,17 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        self.window = UIWindow()
+        self.window?.frame = UIScreen.mainScreen().bounds
+        self.window?.makeKeyAndVisible()
         
-        let centerNav = PieceNavigationController(rootViewController: HomeViewController())
-        let leftViewController = LeftViewController()
-        let rightViewController = RightViewController()
-        let drawerController = DrawerController(centerViewController: centerNav, leftDrawerViewController: leftViewController, rightDrawerViewController: rightViewController)
-        drawerController.maximumLeftDrawerWidth = 230
-        drawerController.maximumRightDrawerWidth = 110
-        drawerController.openDrawerGestureModeMask = OpenDrawerGestureMode.PanningCenterView
-        drawerController.closeDrawerGestureModeMask = CloseDrawerGestureMode.All
-        self.window?.rootViewController = drawerController
-    
+        let nav = PieceNavigationController(rootViewController:HomeViewController())
+        
+//        nav.navigationBar.tintColor = UIColor.whiteColor()
+        
+        self.window?.rootViewController = nav
+        
         return true
     }
 

@@ -1,5 +1,5 @@
 //
-//  PieceNavigationController.swift
+//  ViewController.swift
 //  Piece
 //
 //  Created by cieldon on 16/3/17.
@@ -7,16 +7,19 @@
 //
 
 import UIKit
-class PieceNavigationController: UINavigationController{
+
+class ViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor(red: 2/255, green: 193/255, blue: 73/255, alpha: 1.0)
-        self.navigationBar.barStyle = .Black
-        self.navigationBar.tintColor = UIColor.whiteColor()
+        // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+
 }
+

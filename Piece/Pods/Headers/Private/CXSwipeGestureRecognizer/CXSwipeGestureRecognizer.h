@@ -1,1 +1,0 @@
-../../../CXSwipeGestureRecognizer/CXSwipeGestureRecognizer/CXSwipeGestureRecognizer.h
