@@ -11,12 +11,14 @@ PODS:
     - DrawerController/Core
   - ObjectMapper (1.1.5)
   - SnapKit (0.15.0)
+  - YYText (0.9.19)
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 2.1.0)
   - DrawerController (~> 1.1.0)
   - ObjectMapper (~> 1.1.1)
   - SnapKit (~> 0.15.0)
+  - YYText (~> 0.9.18)
 
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
@@ -24,5 +26,6 @@ SPEC CHECKSUMS:
   DrawerController: 8fd56e6238399a08c4af054fbea0ef8669cd81f3
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+  YYText: b823b71b99b526c4a81029ecb59f3d8172ed5c9a
 
 COCOAPODS: 0.39.0
