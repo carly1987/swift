@@ -23,6 +23,7 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
         wordData = []
         wordString = ""
         descString = ""
+        Id = nil
         if let wordList = groupData.getGroupData(0){
             if let ID = id{
                 Id = id

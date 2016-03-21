@@ -1,11 +1,11 @@
+////
+////  WordModel.swift
+////  Piece
+////
+////  Created by cieldon on 16/3/17.
+////  Copyright © 2016年 cieldon. All rights reserved.
+////
 //
-//  WordModel.swift
-//  Piece
-//
-//  Created by cieldon on 16/3/17.
-//  Copyright © 2016年 cieldon. All rights reserved.
-//
-
 import Foundation
 import ObjectMapper
 
@@ -35,50 +35,72 @@ class Word: Mappable {
     }
 }
 class WordModel: NSObject{
-    var data: [AnyObject]!
-    var dataJson: [[String : AnyObject]]!
+    var data: AnyObject!
     var defaults = NSUserDefaults.standardUserDefaults()
     override init() {
         super.init()
-//        let json = "[{\"title\":\"gropu1\",\"list\":[{\"word\":\"a\", \"desc\":\"aa\"}, {\"word\":\"aa\", \"desc\":\"aaa\"}]},{\"title\":\"gropu2\",\"list\":[{\"word\":\"b\", \"desc\":\"bb\"}, {\"word\":\"bb\", \"desc\":\"bbb\"}]}]"
-        data = []
-        if let json = defaults.stringArrayForKey("groups"){
+        var dataJson: [[String : AnyObject]]!
+        defaults.removeObjectForKey("groups")
+        print("初始化：", defaults.dictionaryForKey("groups"))
+        if let json = defaults.dictionaryForKey("groups"){
             let a = Mapper<Group>().mapArray(json)
             dataJson = a?.toJSON()
-            for var index = 0; index < dataJson.count; ++index{
-                let list = dataJson[index]["list"]
-                let b = Mapper<Word>().mapArray(list)
-                let listJson = b?.toJSON()
-                dataJson[index]["list"] = listJson
+            if (dataJson != nil && dataJson.count > 0){
+                for var index = 0; index < dataJson.count; ++index{
+                    let list = dataJson[index]["list"]
+                    let b = Mapper<Word>().mapArray(list)
+                    let listJson = b?.toJSON()
+                    dataJson[index]["list"] = listJson
+                }
+                data = dataJson
             }
-            data = dataJson
+            
+        }else{
+            data = []
         }
     }
-    
+
     func getGroupData(atIndex: Int!) -> AnyObject? {
-        if(data.count > 0){
-            if let group = data?[atIndex]{
-                return group
+        if(data != nil && data.count > 0){
+            if let groupData = data?[atIndex]{
+                return groupData
             }
         }
         return nil
     }
-    
+
     func getWordData(atIndex: Int!, group:Int!) ->AnyObject? {
-        if let list = getGroupData(group){
-            if let word = list[atIndex]{
-                return word
+        if(data != nil && data.count > 0){
+            if let groupData = data?[group]{
+                if let wordList = groupData[atIndex]{
+                    if let wordData = wordList["list"]{
+                        if let word = wordData![atIndex]{
+                            return word
+                        }
+                    }
+                }
             }
         }
         return nil
     }
-    
+
     func saveWord(group:Int!, word:Int!, wordString:String!, descString:String!){
-        if(word){
-            if let groups = defaults.stringArrayForKey("groups"){
-                
+        if(data.count > 0){
+            if let list = getGroupData(group){
+                if let wordList = getWordData(word, group: group){
+                    print("修改：", data[group])
+//                    data[group]!["list"]![word]!["word"]! = wordString
+//                    data[group]!["list"]![word]!["desc"]! = descString
+                }
             }
+        }else{
+            let json = ["title": "gropu1","list":["word":wordString,"desc":descString]]
+            data = [json]
+//            let dataString = String(data)
+            defaults.setObject(data, forKey: "groups")
+            print(data)
+            print("结果：", defaults.dictionaryForKey("groups"))
         }
-        
     }
+
 }
