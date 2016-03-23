@@ -7,100 +7,59 @@
 ////
 //
 import Foundation
-import ObjectMapper
+import SwiftyJSON
 
-
-class Group: Mappable {
-    var title : String!
-    var list : [AnyObject]!
-    init(){}
-    required init?(_ map:Map){
-        mapping(map)
-    }
-    func mapping(map: Map) {
-        title <- map["title"]
-        list <- map["list"]
-    }
-}
-class Word: Mappable {
-    var word : String!
-    var desc : String!
-    init(){}
-    required init?(_ map:Map){
-        mapping(map)
-    }
-    func mapping(map: Map) {
-        word <- map["word"]
-        desc <- map["desc"]
-    }
-}
 class WordModel: NSObject{
-    var data: AnyObject!
-    var defaults = NSUserDefaults.standardUserDefaults()
+    var data: JSON!
     override init() {
         super.init()
-        var dataJson: [[String : AnyObject]]!
-        defaults.removeObjectForKey("groups")
-        print("初始化：", defaults.dictionaryForKey("groups"))
-        if let json = defaults.dictionaryForKey("groups"){
-            let a = Mapper<Group>().mapArray(json)
-            dataJson = a?.toJSON()
-            if (dataJson != nil && dataJson.count > 0){
-                for var index = 0; index < dataJson.count; ++index{
-                    let list = dataJson[index]["list"]
-                    let b = Mapper<Word>().mapArray(list)
-                    let listJson = b?.toJSON()
-                    dataJson[index]["list"] = listJson
-                }
-                data = dataJson
-            }
-            
-        }else{
-            data = []
-        }
-    }
-
-    func getGroupData(atIndex: Int!) -> AnyObject? {
-        if(data != nil && data.count > 0){
-            if let groupData = data?[atIndex]{
-                return groupData
-            }
-        }
-        return nil
-    }
-
-    func getWordData(atIndex: Int!, group:Int!) ->AnyObject? {
-        if(data != nil && data.count > 0){
-            if let groupData = data?[group]{
-                if let wordList = groupData[atIndex]{
-                    if let wordData = wordList["list"]{
-                        if let word = wordData![atIndex]{
-                            return word
-                        }
-                    }
-                }
-            }
-        }
-        return nil
-    }
-
-    func saveWord(group:Int!, word:Int!, wordString:String!, descString:String!){
-        if(data.count > 0){
-            if let list = getGroupData(group){
-                if let wordList = getWordData(word, group: group){
-                    print("修改：", data[group])
-//                    data[group]!["list"]![word]!["word"]! = wordString
-//                    data[group]!["list"]![word]!["desc"]! = descString
-                }
-            }
-        }else{
-            let json = ["title": "gropu1","list":["word":wordString,"desc":descString]]
-            data = [json]
-//            let dataString = String(data)
-            defaults.setObject(data, forKey: "groups")
-            print(data)
-            print("结果：", defaults.dictionaryForKey("groups"))
-        }
+        data = [
+            [
+                "title":"groupA",
+                "list":
+                    [
+                        ["word":"A", "desc":"aa"],
+                        ["word":"Aa", "desc":"aa"]
+                    ]
+            ],
+            [
+                "title":"groupB",
+                "list":
+                    [
+                        ["word":"B", "desc":"bb"],
+                        ["word":"Ba", "desc":"bb"]
+                    ]
+            ]
+        ]
+//        let jsonData = try? NSJSONSerialization.dataWithJSONObject(list, options: [])
+//        let jsonObject = try? NSJSONSerialization.JSONObjectWithData(jsonData!, options: .AllowFragments)
+//        data = JSON(jsonObject!)
+        print(data[0]["title"])
+        data[0]["title"] = "7777"
+        print(data[0]["title"])
+        
+        
+        var json: JSON =  [
+            [
+                "title":"groupA",
+                "list":
+                    [
+                        ["word":"A", "desc":"aa"],
+                        ["word":"Aa", "desc":"aa"]
+                ]
+            ],
+            [
+                "title":"groupB",
+                "list":
+                    [
+                        ["word":"B", "desc":"bb"],
+                        ["word":"Ba", "desc":"bb"]
+                ]
+            ]
+        ]
+//        json[0]["list"][3]["what"] = "that"
+        json[0]["title"] = "494"
+        print(json[0]["title"])
     }
 
 }

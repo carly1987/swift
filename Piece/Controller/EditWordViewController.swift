@@ -24,16 +24,16 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
         wordString = ""
         descString = ""
         Id = nil
-        if let wordList = groupData.getGroupData(0){
-            if let ID = id{
-                Id = id
-                if let list = wordList["list"]{
-                    wordData = list![ID]
-                    wordString = wordData.valueForKey("word") as? String
-                    wordString = wordData.valueForKey("desc") as? String
-                }
-            }
-        }
+//        if( id != nil){
+//            Id = id
+//            if let wordList = groupData.getWordList(0){
+//                if let data = groupData.getItemData(Id, list: wordList){
+//                    wordData = data
+//                    wordString = data.stringForKey("word")
+//                    descString = data.stringForKey("desc")
+//                }
+//            }
+//        }
         
         view.backgroundColor = UIColor.whiteColor()
     }
@@ -70,7 +70,7 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
     }
     
     func saveWord(btn:UIBarButtonItem){
-        groupData.saveWord(0, word:Id, wordString:word.text, descString:desc.text)
+//        groupData.saveWord(0, wordIndex:Id, wordString:word.text!, descString:desc.text!)
         self.navigationController?.popViewControllerAnimated(false)
     }
     

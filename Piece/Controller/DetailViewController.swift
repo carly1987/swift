@@ -17,15 +17,8 @@ class DetailViewController: UIViewController{
     var descString: String!
     init (id: Int!){
         super.init(nibName: nil, bundle: nil)
-        wordList = WordModel().getGroupData(0)!["list"]
-        if (id == nil){
-            wordString = ""
-            descString = ""
-        }else{
-            wordData = wordList[id]
-            wordString = wordData.valueForKey("word") as? String
-            wordString = wordData.valueForKey("desc") as? String
-        }
+        wordString = ""
+        descString = ""
         view.backgroundColor = UIColor.whiteColor()
     }
     required init?(coder aDecoder: NSCoder) {
