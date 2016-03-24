@@ -8,9 +8,9 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 class DetailViewController: UIViewController{
-    var wordList: AnyObject!
-    var wordData: AnyObject!
+    var groupModel : WordModel!
     var word: UILabel!
     var desc: UITextView!
     var wordString: String!
@@ -19,6 +19,11 @@ class DetailViewController: UIViewController{
         super.init(nibName: nil, bundle: nil)
         wordString = ""
         descString = ""
+        groupModel = WordModel()
+        if let item = groupModel.getWordData(id, groupIndex: 0){
+            wordString = item.valueForKey("word") as? String
+            descString = item.valueForKey("desc") as? String
+        }
         view.backgroundColor = UIColor.whiteColor()
     }
     required init?(coder aDecoder: NSCoder) {

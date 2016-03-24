@@ -8,9 +8,10 @@
 
 import UIKit
 import SnapKit
+import SwiftyJSON
 class WordTableView: UITableViewController{
     var groupModel : WordModel!
-    var wordData : AnyObject?
+    var wordList : JSON!
     var nav: UINavigationController!
     init(style: UITableViewStyle, nav: UINavigationController){
         super.init(style: style)
@@ -23,39 +24,47 @@ class WordTableView: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         groupModel = WordModel()
-        wordData = []
-//        if let data = groupModel.getWordList(0){
-//            wordData = data
-//        }
+        wordList = []
+        if let data = groupModel.getWordList(0){
+            wordList = data
+        }
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.registerClass(WordTableViewCell.self, forCellReuseIdentifier: "cell")
     }
     
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        return 1
-//    }
-//
-//    
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return wordData!.count
-//    }
-//
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-//        cell.accessoryType = .DisclosureIndicator
-//        cell.editingAccessoryType = .Checkmark
-//        cell.editing = true
-//        let listcell = cell as! WordTableViewCell
-//        if let item = groupModel.getItemData(indexPath.row, list: wordData!) {
-//            listcell.textLabel!.text = item.valueForKey("word") as? String
-//        }
-//        return cell
-//        
-//    }
-//
-//    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//        self.nav.pushViewController(DetailViewController(id:indexPath.row), animated: false)
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+
+    func refresh() {
+        groupModel = WordModel()
+        wordList = []
+        if let data = groupModel.getWordList(0){
+            wordList = data
+        }
+        self.tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wordList!.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        cell.accessoryType = .DisclosureIndicator
+        cell.editingAccessoryType = .Checkmark
+        cell.editing = true
+        let listcell = cell as! WordTableViewCell
+        if let item = groupModel.getItemData(indexPath.row, list: wordList!) {
+            listcell.textLabel!.text = item.valueForKey("word") as? String
+        }
+        return cell
+        
+    }
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.nav.pushViewController(DetailViewController(id:indexPath.row), animated: false)
+    }
     
 }

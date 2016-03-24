@@ -10,8 +10,7 @@ import UIKit
 import SnapKit
 import YYText
 class EditWordViewController: UIViewController, UITextFieldDelegate{
-    var groupData : WordModel!
-    var wordData : AnyObject!
+    var groupModel : WordModel!
     var word: UITextField!
     var desc: UITextView!
     var wordString: String!
@@ -19,21 +18,17 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
     var Id: Int!
     init (id: Int!){
         super.init(nibName: nil, bundle: nil)
-        groupData = WordModel()
-        wordData = []
         wordString = ""
         descString = ""
+        groupModel = WordModel()
         Id = nil
-//        if( id != nil){
-//            Id = id
-//            if let wordList = groupData.getWordList(0){
-//                if let data = groupData.getItemData(Id, list: wordList){
-//                    wordData = data
-//                    wordString = data.stringForKey("word")
-//                    descString = data.stringForKey("desc")
-//                }
-//            }
-//        }
+        if (id != nil){
+            Id = id
+        }
+        if let item = groupModel.getWordData(Id, groupIndex: 0){
+            wordString = item.valueForKey("word") as? String
+            descString = item.valueForKey("desc") as? String
+        }
         
         view.backgroundColor = UIColor.whiteColor()
     }
@@ -70,7 +65,7 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
     }
     
     func saveWord(btn:UIBarButtonItem){
-//        groupData.saveWord(0, wordIndex:Id, wordString:word.text!, descString:desc.text!)
+        groupModel.saveWord(0, wordIndex:Id, wordString:word.text!, descString:desc.text!)
         self.navigationController?.popViewControllerAnimated(false)
     }
     
