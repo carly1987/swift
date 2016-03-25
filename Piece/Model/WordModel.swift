@@ -14,9 +14,6 @@ class WordModel: NSObject{
     override init() {
         super.init()
         data = nil
-        if(defaults.stringForKey("groups") == nil){
-            defaults.setObject("", forKey: "groups")
-        }
         if var jsonStr = defaults.stringForKey("groups"){
             if let jsonData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding,
                 allowLossyConversion: false) {
@@ -66,16 +63,21 @@ class WordModel: NSObject{
         if var list = data?[groupIndx]["list"].arrayObject{
             list.append(["word": wordString, "desc": descString])
             data?[groupIndx]["list"].arrayObject = list
+        }else{
+            let jsonStr = "[{\"title\": \"group1\", \"list\": [{\"word\": \""+wordString+"\",\"desc\": \""+descString+"\"}]}]"
+            if let jsonData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding,
+                allowLossyConversion: false) {
+                    let json = JSON(data: jsonData)
+                    data = json
+            }
         }
-
-        
         saveData()
     }
     
     func saveData(){
         let jsonStr = data.rawString()!
         defaults.setObject(jsonStr, forKey: "groups")
-        
+        print(defaults.stringForKey("groups"))
     }
     
     func saveWord(groupIndx: Int, wordIndex: Int!, wordString: String, descString: String){

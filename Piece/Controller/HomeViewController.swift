@@ -13,13 +13,14 @@ class HomeViewController: UIViewController{
     var nav: UINavigationController!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.whiteColor()
+//        view.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
         self.title = "Piece"
         nav = self.navigationController
         let add = UIBarButtonItem(title: "Add", style: .Done, target: self, action: "addWord:")
         self.navigationItem.setRightBarButtonItem(add, animated: false)
         wordList = WordTableView(style: .Plain, nav: nav)
         view.addSubview(wordList.view)
+        wordList.view.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 1.0)
         wordList.view.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(64)
             make.left.right.bottom.equalTo(view).offset(0)

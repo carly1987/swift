@@ -28,6 +28,7 @@ class WordTableView: UITableViewController{
         if let data = groupModel.getWordList(0){
             wordList = data
         }
+        self.tableView.separatorStyle = .None
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.registerClass(WordTableViewCell.self, forCellReuseIdentifier: "cell")
@@ -52,8 +53,7 @@ class WordTableView: UITableViewController{
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        cell.accessoryType = .DisclosureIndicator
-        cell.editingAccessoryType = .Checkmark
+        cell.backgroundColor = UIColor.clearColor()
         cell.editing = true
         let listcell = cell as! WordTableViewCell
         if let item = groupModel.getItemData(indexPath.row, list: wordList!) {
@@ -66,5 +66,20 @@ class WordTableView: UITableViewController{
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.nav.pushViewController(DetailViewController(id:indexPath.row), animated: false)
     }
+    
+//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return true
+//    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        print(indexPath.row)
+        
+    }
+//
+//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
+//        return UITableViewCellEditingStyle.Delete
+//    }
+
     
 }
