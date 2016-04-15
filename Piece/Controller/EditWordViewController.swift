@@ -16,16 +16,22 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
     var wordString: String!
     var descString: String!
     var Id: Int!
-    init (id: Int!){
+    var GroupId : Int!
+    var line: UIView!
+    init (groupId: Int!, id: Int!){
         super.init(nibName: nil, bundle: nil)
         wordString = ""
-        descString = ""
+        descString = "编辑词条"
         groupModel = WordModel()
         Id = nil
         if (id != nil){
             Id = id
         }
-        if let item = groupModel.getWordData(Id, groupIndex: 0){
+        GroupId = nil
+        if (groupId != nil){
+            GroupId = groupId
+        }
+        if let item = groupModel.getWordData(Id, groupIndex: GroupId){
             wordString = item.valueForKey("word") as? String
             descString = item.valueForKey("desc") as? String
         }
@@ -42,8 +48,9 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
 
         word = UITextField()
         word.delegate = self
-        word.placeholder = "请输入单词"
+        word.placeholder = "输入单词一个新词条"
         word.text = wordString
+        word.font = UIFont.monospacedDigitSystemFontOfSize(20, weight: 0)
         view.addSubview(word)
         word.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(64)
@@ -54,6 +61,8 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
         
         desc = UITextView()
         desc.text = descString
+        desc.font = UIFont.monospacedDigitSystemFontOfSize(22, weight: 0)
+        desc.textColor = UIColor(red: 98/255, green: 98/255, blue: 98/255, alpha: 1.0)
         view.addSubview(desc)
         desc.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(114)
@@ -61,11 +70,19 @@ class EditWordViewController: UIViewController, UITextFieldDelegate{
             make.right.equalTo(view).offset(-10)
             make.bottom.equalTo(view).offset(0)
         }
-        
+        line = UIView()
+        line.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 0.3)
+        view.addSubview(line)
+        line.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(view).offset(115)
+            make.left.equalTo(view).offset(0)
+            make.right.equalTo(view).offset(0)
+            make.height.equalTo(1)
+        }
     }
     
     func saveWord(btn:UIBarButtonItem){
-        groupModel.saveWord(0, wordIndex:Id, wordString:word.text!, descString:desc.text!)
+        groupModel.saveWord(GroupId, wordIndex:Id, wordString:word.text!, descString:desc.text!)
         self.navigationController?.popViewControllerAnimated(false)
     }
     

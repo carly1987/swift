@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		9445DF2F939C5B4A716DBE36 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18BC79309CAC5362BE3DBD05 /* Pods.framework */; };
 		F928DAEF1C9BFAC100487066 /* EditWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F928DAEE1C9BFAC100487066 /* EditWordViewController.swift */; };
+		F946BEA21CBB801C00F3E342 /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946BEA11CBB801C00F3E342 /* GroupsViewController.swift */; };
+		F946BEA41CBB842200F3E342 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F946BEA31CBB842200F3E342 /* SettingViewController.swift */; };
+		F9888A011CBCD47100CCA53E /* GroupTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9888A001CBCD47100CCA53E /* GroupTableView.swift */; };
+		F9888A031CBCDC0200CCA53E /* GroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9888A021CBCDC0200CCA53E /* GroupTableViewCell.swift */; };
 		F99908981C9A7A5D00001A67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99908971C9A7A5D00001A67 /* AppDelegate.swift */; };
 		F999089A1C9A7A5D00001A67 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99908991C9A7A5D00001A67 /* ViewController.swift */; };
 		F999089F1C9A7A5D00001A67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F999089E1C9A7A5D00001A67 /* Assets.xcassets */; };
@@ -46,6 +50,10 @@
 		432CFD6DDAF506ABC4A2DE95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		90EB665BE941108FE3C18C60 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F928DAEE1C9BFAC100487066 /* EditWordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWordViewController.swift; sourceTree = "<group>"; };
+		F946BEA11CBB801C00F3E342 /* GroupsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		F946BEA31CBB842200F3E342 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		F9888A001CBCD47100CCA53E /* GroupTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableView.swift; sourceTree = "<group>"; };
+		F9888A021CBCDC0200CCA53E /* GroupTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableViewCell.swift; sourceTree = "<group>"; };
 		F99908941C9A7A5D00001A67 /* Piece.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Piece.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F99908971C9A7A5D00001A67 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F99908991C9A7A5D00001A67 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 			children = (
 				F99908C91C9A953C00001A67 /* HomeViewController.swift */,
 				F99908D51C9BEA9E00001A67 /* DetailViewController.swift */,
+				F946BEA11CBB801C00F3E342 /* GroupsViewController.swift */,
+				F946BEA31CBB842200F3E342 /* SettingViewController.swift */,
 				F928DAEE1C9BFAC100487066 /* EditWordViewController.swift */,
 			);
 			path = Controller;
@@ -198,6 +208,8 @@
 			children = (
 				F99908D11C9A9DC200001A67 /* WordTableViewCell.swift */,
 				F99908D31C9A9E4500001A67 /* WordTableView.swift */,
+				F9888A001CBCD47100CCA53E /* GroupTableView.swift */,
+				F9888A021CBCDC0200CCA53E /* GroupTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -388,13 +400,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				F99908CE1C9A99A400001A67 /* PieceNavigationController.swift in Sources */,
+				F946BEA41CBB842200F3E342 /* SettingViewController.swift in Sources */,
 				F928DAEF1C9BFAC100487066 /* EditWordViewController.swift in Sources */,
+				F9888A011CBCD47100CCA53E /* GroupTableView.swift in Sources */,
 				F99908D21C9A9DC200001A67 /* WordTableViewCell.swift in Sources */,
 				F999089A1C9A7A5D00001A67 /* ViewController.swift in Sources */,
+				F946BEA21CBB801C00F3E342 /* GroupsViewController.swift in Sources */,
 				F99908981C9A7A5D00001A67 /* AppDelegate.swift in Sources */,
 				F99908D41C9A9E4500001A67 /* WordTableView.swift in Sources */,
 				F99908CA1C9A953C00001A67 /* HomeViewController.swift in Sources */,
 				F99908D01C9A9D6700001A67 /* WordModel.swift in Sources */,
+				F9888A031CBCDC0200CCA53E /* GroupTableViewCell.swift in Sources */,
 				F99908D61C9BEA9E00001A67 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

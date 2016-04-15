@@ -14,14 +14,41 @@ class WordModel: NSObject{
     override init() {
         super.init()
         data = nil
-        if var jsonStr = defaults.stringForKey("groups"){
+        if let jsonStr = defaults.stringForKey("groups"){
             if let jsonData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding,
                 allowLossyConversion: false) {
-                    var json = JSON(data: jsonData)
+                    let json = JSON(data: jsonData)
                     data = json
             }
         }
         
+    }
+    
+    func getGroupList() -> JSON? {
+        var group : JSON!
+        if(data.count > 0){
+            group = data
+            group.arrayObject?.removeAll()
+            for index in 0 ..< data.count{
+                if let list = data[index]["list"].arrayObject{
+                    let listCount = list.count
+                    let title = data[index]["title"].stringValue
+                    group.arrayObject?.append(["id": index, "title": title, "total": listCount])
+                }
+            }
+            return group
+        }
+        return nil
+    }
+    
+    func getGroupData(groupIndex: Int, groupList: JSON) -> AnyObject? {
+        if let title = groupList[groupIndex]["title"].string{
+            if let total = groupList[groupIndex]["total"].int{
+                let totalString = String(total) + "词条"
+                return  ["title": title, "total":totalString]
+            }
+        }
+        return nil
     }
     
     func getWordList(groupIndex: Int) -> JSON? {
@@ -77,7 +104,6 @@ class WordModel: NSObject{
     func saveData(){
         let jsonStr = data.rawString()!
         defaults.setObject(jsonStr, forKey: "groups")
-        print(defaults.stringForKey("groups"))
     }
     
     func saveWord(groupIndx: Int, wordIndex: Int!, wordString: String, descString: String){
@@ -91,5 +117,39 @@ class WordModel: NSObject{
             addWord(groupIndx, wordString: wordString, descString: descString)
         }
         
+    }
+
+    func saveGroup(groupIndx: Int!, titleString: String){
+        if(groupIndx != nil){
+            if var group = data?[groupIndx].arrayObject{
+               data?[groupIndx]["title"].string = titleString
+            }
+        }else{
+            let jsonStr = "[{\"title\": \""+titleString+"\", \"list\": []}]"
+            if let jsonData = jsonStr.dataUsingEncoding(NSUTF8StringEncoding,
+                                                        allowLossyConversion: false) {
+                let json = JSON(data: jsonData)
+                data = json
+            }
+        }
+        saveData()
+    }
+    
+    func deleteWord(groupIndx: Int, wordIndex: Int!){
+        if(wordIndex != nil){
+            if var list = data?[groupIndx]["list"].arrayObject{
+                list.removeAtIndex(wordIndex)
+                data?[groupIndx]["list"].arrayObject = list
+                saveData()
+            }
+        }
+    }
+    
+    func deleteGroup(groupIndx: Int){
+        if var groups = data.arrayObject{
+            groups.removeAtIndex(groupIndx)
+            data.arrayObject = groups
+            saveData()
+        }
     }
 }

@@ -15,15 +15,29 @@ class DetailViewController: UIViewController{
     var desc: UITextView!
     var wordString: String!
     var descString: String!
-    init (id: Int!){
+    var Id : Int!
+    var GroupId : Int!
+    var line: UIView!
+    init (groupId: Int!, id: Int!){
         super.init(nibName: nil, bundle: nil)
         wordString = ""
         descString = ""
         groupModel = WordModel()
-        if let item = groupModel.getWordData(id, groupIndex: 0){
+        Id = nil
+        if (id != nil){
+            Id = id
+        }
+        GroupId = nil
+        if (groupId != nil){
+            GroupId = groupId
+        }
+        if let item = groupModel.getWordData(Id, groupIndex: GroupId){
             wordString = item.valueForKey("word") as? String
             descString = item.valueForKey("desc") as? String
         }
+        self.title = wordString
+        let Edit = UIBarButtonItem(title: "Edit", style: .Done, target: self, action: "editWord:")
+        self.navigationItem.setRightBarButtonItem(Edit, animated: false)
         view.backgroundColor = UIColor.whiteColor()
     }
     required init?(coder aDecoder: NSCoder) {
@@ -45,7 +59,9 @@ class DetailViewController: UIViewController{
         
         desc = UITextView()
         desc.text = descString
-        desc.font = UIFont.monospacedDigitSystemFontOfSize(16, weight: 0)
+        desc.editable = false
+        desc.font = UIFont.monospacedDigitSystemFontOfSize(22, weight: 0)
+        desc.textColor = UIColor(red: 98/255, green: 98/255, blue: 98/255, alpha: 1.0)
         view.addSubview(desc)
         desc.snp_makeConstraints{ (make) -> Void in
             make.top.equalTo(view).offset(114)
@@ -53,12 +69,38 @@ class DetailViewController: UIViewController{
             make.right.equalTo(view).offset(10)
             make.bottom.equalTo(view).offset(0)
         }
-        
+        line = UIView()
+        line.backgroundColor = UIColor(red: 45/255, green: 45/255, blue: 45/255, alpha: 0.3)
+        view.addSubview(line)
+        line.snp_makeConstraints{ (make) -> Void in
+            make.top.equalTo(view).offset(115)
+            make.left.equalTo(view).offset(0)
+            make.right.equalTo(view).offset(0)
+            make.height.equalTo(1)
+        }
+    }
+    
+    func editWord(btn:UIBarButtonItem){
+        self.navigationController?.pushViewController(EditWordViewController(groupId:GroupId, id: Id), animated: false)
+    }
+    
+    func refresh(){
+        groupModel = WordModel()
+        if let item = groupModel.getWordData(Id, groupIndex: GroupId){
+            wordString = item.valueForKey("word") as? String
+            descString = item.valueForKey("desc") as? String
+        }
+        self.title = wordString
+        word.text = wordString
+        desc.text = descString
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func viewWillAppear(animated: Bool) {
+       refresh()
+    }
 }

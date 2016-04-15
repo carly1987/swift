@@ -13,6 +13,7 @@ class PieceNavigationController: UINavigationController{
         self.navigationBar.barTintColor = UIColor(red: 2/255, green: 193/255, blue: 73/255, alpha: 1.0)
         self.navigationBar.barStyle = .Black
         self.navigationBar.tintColor = UIColor.whiteColor()
+
     }
     
     override func didReceiveMemoryWarning() {

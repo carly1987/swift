@@ -7,24 +7,33 @@
 //
 
 import UIKit
-
+import DrawerController
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    var drawerController : DrawerController?
+    func application(application: UIApplication, willFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+        let leftViewController = GroupsViewController()
+        let rightViewController = SettingViewController()
+        let centerViewController = HomeViewController()
+        
+        let navigationController = PieceNavigationController(rootViewController:centerViewController)
+        let leftSideNavController = UINavigationController(rootViewController: leftViewController)
+        
+        self.drawerController = DrawerController(centerViewController: navigationController, leftDrawerViewController: leftSideNavController, rightDrawerViewController: rightViewController)
+        self.drawerController?.showsShadows = false
+        self.drawerController?.maximumLeftDrawerWidth = 370.0
+        self.drawerController?.openDrawerGestureModeMask = .All
+        self.drawerController?.closeDrawerGestureModeMask = .All
         self.window = UIWindow()
         self.window?.frame = UIScreen.mainScreen().bounds
+        self.window?.rootViewController = self.drawerController
+        return true
+    }
+    
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         self.window?.makeKeyAndVisible()
-        
-        let nav = PieceNavigationController(rootViewController:HomeViewController())
-        
-//        nav.navigationBar.tintColor = UIColor.whiteColor()
-        
-        self.window?.rootViewController = nav
-        
         return true
     }
 

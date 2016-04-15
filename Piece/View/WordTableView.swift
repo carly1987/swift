@@ -13,9 +13,15 @@ class WordTableView: UITableViewController{
     var groupModel : WordModel!
     var wordList : JSON!
     var nav: UINavigationController!
-    init(style: UITableViewStyle, nav: UINavigationController){
+    var GroupId : Int!
+    init(style: UITableViewStyle, nav: UINavigationController, groupId: Int!){
         super.init(style: style)
         self.nav = nav
+        GroupId = nil
+        if (groupId != nil){
+            GroupId = groupId
+        }
+        print(GroupId)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,7 +31,7 @@ class WordTableView: UITableViewController{
         super.viewDidLoad()
         groupModel = WordModel()
         wordList = []
-        if let data = groupModel.getWordList(0){
+        if let data = groupModel.getWordList(GroupId!){
             wordList = data
         }
         self.tableView.separatorStyle = .None
@@ -41,7 +47,7 @@ class WordTableView: UITableViewController{
     func refresh() {
         groupModel = WordModel()
         wordList = []
-        if let data = groupModel.getWordList(0){
+        if let data = groupModel.getWordList(GroupId!){
             wordList = data
         }
         self.tableView.reloadData()
@@ -64,22 +70,14 @@ class WordTableView: UITableViewController{
     }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.nav.pushViewController(DetailViewController(id:indexPath.row), animated: false)
+        self.nav.pushViewController(DetailViewController(groupId:GroupId!, id:indexPath.row), animated: false)
     }
-    
-//    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        
-        print(indexPath.row)
-        
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            groupModel.deleteWord(GroupId!, wordIndex: indexPath.row)
+            refresh()
+        }
     }
-//
-//    override func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-//        return UITableViewCellEditingStyle.Delete
-//    }
-
     
 }
