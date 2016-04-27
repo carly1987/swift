@@ -7,4 +7,5 @@ pod 'ObjectMapper', '~> 1.1.1'
 pod 'AlamofireObjectMapper', '~> 2.1.0'
 pod 'YYText', '~> 0.9.18'
 pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+pod 'DOAlertController' 
 

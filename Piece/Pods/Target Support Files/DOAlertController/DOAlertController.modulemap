@@ -1,0 +1,6 @@
+framework module DOAlertController {
+  umbrella header "DOAlertController-umbrella.h"
+
+  export *
+  module * { export * }
+}

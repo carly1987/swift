@@ -3,6 +3,7 @@ PODS:
   - AlamofireObjectMapper (2.1.2):
     - Alamofire (~> 3.2)
     - ObjectMapper (~> 1.0)
+  - DOAlertController (1.0.0)
   - DrawerController (1.1.0):
     - DrawerController/Core (= 1.1.0)
     - DrawerController/DrawerVisualStates (= 1.1.0)
@@ -16,6 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireObjectMapper (~> 2.1.0)
+  - DOAlertController
   - DrawerController (~> 1.1.0)
   - ObjectMapper (~> 1.1.1)
   - SnapKit (~> 0.15.0)
@@ -34,6 +36,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   AlamofireObjectMapper: 82391c31f23e37bdb2660da174bcf81b202da39d
+  DOAlertController: d22fca7cd83b5eeeb24b78a1c6c76ed08cc28dac
   DrawerController: 8fd56e6238399a08c4af054fbea0ef8669cd81f3
   ObjectMapper: 528b1a6677a6acac7747edd508576983e76a9148
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
